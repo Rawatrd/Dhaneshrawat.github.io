@@ -1,7 +1,3 @@
-Certainly! Here's a template for a README file for your GitHub Pages website about facts and stories:
-
----
-
 # Facts and Stories Website
 
 Welcome to the Facts and Stories website! This website is dedicated to sharing fascinating facts and engaging stories from various fields and interests.
