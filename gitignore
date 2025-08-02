@@ -1,0 +1,23 @@
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor settings and temp files
+*.log
+*.swp
+*.tmp
+*.bak
+.idea/
+.vscode/
+
+# Node or web build environments (future-proofing)
+node_modules/
+dist/
+build/
+.env
+
+# OS or zip artifacts
+*.zip
+*.tar.gz
+*.7z
