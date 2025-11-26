@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Engine Preview</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body { background:#fdfcfb; font-family:Inter, sans-serif; padding:20px; }
+</style>
+</head>
+<body>
+
+<div class="max-w-4xl mx-auto">
+
+    <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">
+        The Multiversal Engine: 4‑DOF Framework
+    </h2>
+
+    <p class="text-gray-700 text-center max-w-3xl mx-auto mb-8">
+        A live preview of the integrated engine section with balanced theme.
+    </p>
+
+    <div class="bg-white shadow-md rounded-xl p-6 border border-gray-200">
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Axes Inducing: Defining Degrees of Freedom</h3>
+        <p class="text-gray-700 mb-4">
+            The interplay among Energy, Field, Vibration, and Time defines the operational DOF of the multiversal engine.
+        </p>
+
+        <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li><strong>Energy:</strong> Scale, magnitude, intensity.</li>
+            <li><strong>Field:</strong> Spatial, dimensional interaction.</li>
+            <li><strong>Vibration:</strong> Frequency, resonance, structural form.</li>
+            <li><strong>Time:</strong> Trajectory, pace, continuity.</li>
+        </ul>
+    </div>
+
+    <h3 class="text-center text-xl font-semibold text-gray-900 mt-10 mb-4">
+        4‑Axis Engine Visualization
+    </h3>
+
+    <div class="flex justify-center">
+        <canvas id="engineCanvas" width="600" height="600"
+            class="rounded-xl border border-teal-300 bg-[linear-gradient(145deg,#fafafa,#eef8f8)] shadow-lg">
+        </canvas>
+    </div>
+
+</div>
+
+<script>
+    const canvas = document.getElementById('engineCanvas');
+    const ctx = canvas.getContext('2d');
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+
+    const coreRadius = 30;
+    const axisLength = 230;
+
+    const axisColor = '#2fb7a3';
+    const labelColor = '#0f766e';
+    const coreColor = '#ffd447';
+
+    function drawAxis(angle, label) {
+        ctx.save();
+        ctx.translate(centerX, centerY);
+        ctx.rotate(angle);
+
+        ctx.strokeStyle = axisColor;
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(coreRadius, 0);
+        ctx.lineTo(axisLength, 0);
+        ctx.stroke();
+
+        ctx.fillStyle = labelColor;
+        ctx.font = '18px Inter';
+        ctx.textAlign = 'left';
+        ctx.fillText(label, axisLength + 10, 6);
+
+        ctx.restore();
+    }
+
+    ctx.fillStyle = coreColor;
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, coreRadius, 0, Math.PI * 2);
+    ctx.fill();
+
+    const axes = [
+        { angle: 0, label: 'Energy (Scale)' },
+        { angle: Math.PI/2, label: 'Field (Spatial)' },
+        { angle: Math.PI, label: 'Time (Temporal)' },
+        { angle: 3*Math.PI/2, label: 'Vibration (Formative)' }
+    ];
+
+    axes.forEach(a => drawAxis(a.angle, a.label));
+
+    ctx.fillStyle = '#333';
+    ctx.font = 'bold 14px Inter';
+    ctx.textAlign = 'center';
+    ctx.fillText('CORE', centerX, centerY + 5);
+</script>
+
+</body>
+</html>
